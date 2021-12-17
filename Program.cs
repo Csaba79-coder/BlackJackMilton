@@ -5,7 +5,7 @@ namespace BlackJackMilton
     class Program
     {
         static void Main(string[] args)
-        {
+                {
             string namePlayer1;
             string namePlayer2;
 
@@ -45,9 +45,10 @@ namespace BlackJackMilton
             {
                 Console.WriteLine(name + ", you have BLACK JACK, two ACES!");
                 return (sum - 1);
-            } else if (sum < 21)
+            }
+            else if (sum < 21)
             {
-                do
+                while(sum <= 16)
                 {
                     card = random.Next(2, 15);
                     cardValue = getCardValue(card);
@@ -55,7 +56,7 @@ namespace BlackJackMilton
                     Console.WriteLine(getCardName(card, name));
                     Console.WriteLine("Sum value of the cards: " + sum);
 
-                } while (sum <= 16);
+                } 
 
                 while (sum > 16 && sum < 21)
                 {
@@ -81,7 +82,7 @@ namespace BlackJackMilton
                 Console.WriteLine("Sum value of the cards: " + sum);
                 return sum;
             }
-            Console.WriteLine("Sum value of the cards: " + sum);
+            /*Console.WriteLine("Sum value of the cards: " + sum);*/
             return sum;
         }
 
